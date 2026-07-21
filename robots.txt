@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.thepaintingpixie.co.uk/sitemap.xml
