@@ -45,3 +45,21 @@ Publishing an invented quote as if it's a genuine customer testimonial is a real
 - **New photography**: right now, the only non-licensed-character images available are `blue.jpg`, `other.jpg`, `kat.jpg`, `kat2.jpg`. To properly move away from Star Wars/Marvel imagery (both for legal safety and premium positioning), you'll want a proper photography session of your actual original designs — florals, animals, fantasy, glitter/sparkle work — shot consistently (good lighting, similar background/style). This is the single highest-impact thing left in Phase 1.
 
 Once you've got new photos, send them over and I'll help you slot them into the gallery and homepage properly.
+
+## ⚠️ Needs fixing — areas.html doesn't match Google service area list
+
+The towns listed in `areas.html`'s coverage paragraph don't match the official service area list configured on Google (Business Profile / Google SEO).
+
+**On Google but missing from areas.html:** Horley, Henfield, Midhurst, Petworth, Steyning, Cranleigh, Godalming, Pulborough, Leatherhead, Storrington, Billingshurst, Southwater, Cuckfield, Broadbridge Heath
+
+**On areas.html but not in the Google list:** Reigate, Chichester, Arundel, Worthing, Brighton, Lewes, Tunbridge Wells, Croydon, Epsom, Farnham, East Grinstead, Redhill
+
+Notably, three towns with their own dedicated location pages — **Reigate, Brighton, and Worthing** — aren't in the official Google service area list at all.
+
+Needs a decision on how to reconcile: replace the site text with the Google list exactly, merge both into a superset, or update the Google Business Profile to match the site instead.
+
+## ⚠️ Needs fixing — no page targets "glitter artist" searches
+
+Google Search Console shows real search volume for "glitter artist brighton" (18 impressions) and "glitter artist sussex" (3 impressions), both ranking around position 60 (effectively invisible). No page on the site uses the phrase "glitter artist" anywhere — the closest match is "bio-glitter" mentioned in passing on the adult/animal print/children's pages.
+
+Worth considering a dedicated glitter artist / glitter tattoo section or page, or at minimum weaving the exact phrase "glitter artist" into an existing page's copy (e.g. the adult or festival-facing content) so it has something to rank with.
