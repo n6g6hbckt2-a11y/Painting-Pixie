@@ -63,3 +63,7 @@ Needs a decision on how to reconcile: replace the site text with the Google list
 Google Search Console shows real search volume for "glitter artist brighton" (18 impressions) and "glitter artist sussex" (3 impressions), both ranking around position 60 (effectively invisible). No page on the site uses the phrase "glitter artist" anywhere — the closest match is "bio-glitter" mentioned in passing on the adult/animal print/children's pages.
 
 Worth considering a dedicated glitter artist / glitter tattoo section or page, or at minimum weaving the exact phrase "glitter artist" into an existing page's copy (e.g. the adult or festival-facing content) so it has something to rank with.
+
+## ✅ Fixed — burgess-hill.html canonical pointed to the wrong domain
+
+`burgess-hill.html`'s canonical and `og:url` pointed to `https://www.thepaintingpixie.co.uk/face-painter-burgess-hill.html` (old domain, wrong filename). Since `face-painter-burgess-hill.html` is the standard page (linked from areas.html, in the sitemap, matches the naming convention of the other 8 location pages) and `burgess-hill.html` has zero inbound links, `burgess-hill.html`'s canonical/og:url now correctly point to `https://paintingpixie.com/face-painter-burgess-hill.html`, consolidating it as a duplicate of the standard page.
