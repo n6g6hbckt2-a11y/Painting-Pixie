@@ -86,6 +86,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://paintingpixie.com/face-painter-south-downs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://paintingpixie.com/face-painter-surrey-villages.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://paintingpixie.com/face-painter-west-sussex-villages.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://paintingpixie.com/animal-print-face-painting.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
