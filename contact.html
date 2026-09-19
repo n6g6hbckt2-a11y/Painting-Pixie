@@ -105,23 +105,37 @@ target="_blank">
 Fill this in and I'll get back to you as soon as possible (usually same day).
 </p>
 <form action="https://formspree.io/f/mjgdnged" method="POST">
-<label>Name</label>
-<input type="text" name="name" required>
+<input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-<label>Email Address</label>
-<input type="email" name="email" required>
+<label for="name">Name</label>
+<input type="text" id="name" name="name" required>
 
-<label>Phone</label>
-<input type="tel" name="phone" required>
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" required>
 
-<label>Event Date</label>
-<input type="date" name="event-date" required>
+<label for="phone">Phone</label>
+<input type="tel" id="phone" name="phone" required>
 
-<label>Location</label>
-<input type="text" name="location" placeholder="e.g. Horsham, Sussex" required>
+<label for="event-date">Event Date</label>
+<input type="date" id="event-date" name="event-date" required>
 
-<label>Package</label>
-<select name="package" required>
+<label for="location">Location</label>
+<input type="text" id="location" name="location" placeholder="e.g. Horsham, Sussex" required>
+
+<label for="hear-about">How did you hear about us?</label>
+<select id="hear-about" name="hear-about">
+<option value="">Select an option</option>
+<option>Google Search</option>
+<option>Google Maps</option>
+<option>WhatsApp / friend recommendation</option>
+<option>Facebook / Instagram</option>
+<option>A venue recommended you</option>
+<option>Saw you at an event</option>
+<option>Other</option>
+</select>
+
+<label for="package">Package</label>
+<select id="package" name="package" required>
 <option value="">Select a package</option>
 <option>🎈 Classic Party (from £130)</option>
 <option>🌟 Ultimate Sparkle (from £160)</option>
@@ -129,8 +143,8 @@ Fill this in and I'll get back to you as soon as possible (usually same day).
 <option>❓ Not Sure Yet</option>
 </select>
 
-<label>Event Details</label>
-<textarea name="message" rows="6"
+<label for="message">Event Details</label>
+<textarea id="message" name="message" rows="6"
 placeholder="Tell me about your event (ages, number of children, theme etc.)"></textarea>
 
 <button type="submit">Send Booking Request ✨</button>
