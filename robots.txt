@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.paintingpixie.com/sitemap.xml
+Sitemap: https://paintingpixie.com/sitemap.xml
