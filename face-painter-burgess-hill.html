@@ -9,6 +9,16 @@
   gtag('js', new Date());
 
   gtag('config', 'G-JMFEXJJZ1H');
+
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="wa.me"]');
+    if (link) {
+      gtag('event', 'whatsapp_click', {
+        'link_url': link.href,
+        'page_location': window.location.href
+      });
+    }
+  });
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
