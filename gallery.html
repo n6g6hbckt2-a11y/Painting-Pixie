@@ -13,9 +13,14 @@
   document.addEventListener('click', function(e) {
     var link = e.target.closest('a[href*="wa.me"]');
     if (link) {
+      var inPage = [].slice.call(document.querySelectorAll('a[href*="wa.me"]')).filter(function(a) { return getComputedStyle(a).position !== 'fixed'; });
+      var pos = getComputedStyle(link).position === 'fixed' ? 'floating' : (inPage.indexOf(link) === 0 ? 'top' : 'lower');
       gtag('event', 'whatsapp_click', {
         'link_url': link.href,
-        'page_location': window.location.href
+        'page_location': window.location.href,
+        'page_path': window.location.pathname,
+        'button_position': pos,
+        'transport_type': 'beacon'
       });
     }
   });
@@ -90,7 +95,7 @@
 <p>Real designs from children's parties, weddings and events across Sussex & Surrey.</p>
 <div style="margin-top:20px;">
 <a class="btn" href="contact.html">📅 Book Your Event</a>
-<a class="whatsapp-btn" href="https://wa.me/447852300125?text=Hi%20I'd%20like%20to%20book%20The%20Painting%20Pixie">💬 WhatsApp</a>
+<a class="whatsapp-btn" href="https://wa.me/447852300125?text=Hi%20I've%20seen%20your%20gallery%20and%20I'd%20like%20to%20book">💬 WhatsApp</a>
 </div>
 </header>
 
@@ -166,7 +171,7 @@ The Painting Pixie provides professional, insured and DBS-checked face painting 
 <h2>Want These Designs at Your Event? ✨</h2>
 <p>Check availability for your date in under a minute.</p>
 <a class="btn" href="contact.html">Check Availability</a>
-<a class="whatsapp-btn" href="https://wa.me/447852300125?text=Hi%20I'd%20like%20to%20book">💬 WhatsApp</a>
+<a class="whatsapp-btn" href="https://wa.me/447852300125?text=Hi%20I've%20seen%20your%20gallery%20and%20I'd%20like%20to%20book">💬 WhatsApp</a>
 </section>
 
 <footer>
@@ -271,7 +276,7 @@ The Painting Pixie provides professional, insured and DBS-checked face painting 
 })();
 </script>
 
-<a href="https://wa.me/447852300125?text=Hi%20I'd%20like%20to%20book%20The%20Painting%20Pixie"
+<a href="https://wa.me/447852300125?text=Hi%20I've%20seen%20your%20gallery%20and%20I'd%20like%20to%20book"
 class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">💬</a>
 
 </body>

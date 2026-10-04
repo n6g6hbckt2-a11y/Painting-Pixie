@@ -11,9 +11,14 @@
   document.addEventListener('click', function(e) {
     var link = e.target.closest('a[href*="wa.me"]');
     if (link) {
+      var inPage = [].slice.call(document.querySelectorAll('a[href*="wa.me"]')).filter(function(a) { return getComputedStyle(a).position !== 'fixed'; });
+      var pos = getComputedStyle(link).position === 'fixed' ? 'floating' : (inPage.indexOf(link) === 0 ? 'top' : 'lower');
       gtag('event', 'whatsapp_click', {
         'link_url': link.href,
-        'page_location': window.location.href
+        'page_location': window.location.href,
+        'page_path': window.location.pathname,
+        'button_position': pos,
+        'transport_type': 'beacon'
       });
     }
   });
