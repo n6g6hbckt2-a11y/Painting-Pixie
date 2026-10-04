@@ -19,6 +19,24 @@
       });
     }
   });
+
+  document.addEventListener('click', function(e) {
+    var tel = e.target.closest('a[href^="tel:"]');
+    if (tel) {
+      gtag('event', 'phone_click', {
+        'link_url': tel.href,
+        'page_location': window.location.href
+      });
+    }
+  });
+
+  document.addEventListener('submit', function(e) {
+    gtag('event', 'booking_request', {
+      'form_destination': e.target.action || '',
+      'page_location': window.location.href,
+      'transport_type': 'beacon'
+    });
+  });
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
