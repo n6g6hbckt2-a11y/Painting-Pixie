@@ -5,6 +5,12 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMFEXJJZ1H"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
+  // Owner opt-out: open any page once with ?notrack on each phone/computer/browser to stop it being counted (?track undoes it)
+  try {
+    if (/[?&]notrack(=|&|$)/.test(location.search)) localStorage.setItem('pp_notrack', '1');
+    if (/[?&]track(=|&|$)/.test(location.search)) localStorage.removeItem('pp_notrack');
+    if (localStorage.getItem('pp_notrack') === '1') window['ga-disable-G-JMFEXJJZ1H'] = true;
+  } catch (e) {}
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
