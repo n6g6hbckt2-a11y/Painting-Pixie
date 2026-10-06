@@ -141,11 +141,21 @@
 }
 </script>
 <style>
-/* Halloween page: dark header + swipeable photo line */
-.page-header.hw{background:radial-gradient(ellipse at 20% 0%,rgba(255,122,26,.45),transparent 60%),radial-gradient(ellipse at 90% 100%,rgba(155,60,255,.45),transparent 60%),#160C22;color:#fff}
+/* Halloween page: Halloween night background (fixed while the page scrolls), dark header, swipeable photo line */
+body{background:#1A0B2E;color:#F3EAF9}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:url("halloween-night.svg") center/cover no-repeat;pointer-events:none}
+section{color:#F3EAF9}
+section h2,section h3{color:#fff}
+section a:not(.btn):not(.whatsapp-btn):not(.package-btn){color:#FFB25A}
+.page-header.hw{background:linear-gradient(180deg,rgba(26,11,46,.25),rgba(26,11,46,.55));color:#fff}
 .page-header.hw::before{display:none}
-.page-header.hw h1,.page-header.hw p{color:#fff}
-.hw-strip-wrap{padding:22px 0 10px;background:#160C22;max-width:none;margin:0}
+.page-header.hw h1,.page-header.hw p{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.packages-section{background:transparent}
+.card,.package-card,.testimonial,.contact-box,section > div[style*="background:#fff"]{color:#2c2c2c}
+.card h3,.package-card h3,.testimonial h3,.contact-box h2,.contact-box h3,section > div[style*="background:#fff"] h2{color:#2c2c2c}
+section .card a:not(.btn),section .contact-box a:not(.btn):not(.whatsapp-btn),section .testimonial a{color:#B84A00}
+.about img{box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.hw-strip-wrap{padding:22px 0 10px;background:rgba(14,6,24,.55);max-width:none;margin:0}
 .hw-strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:10px;overflow-x:auto;padding:0 12px 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
 .hw-strip::-webkit-scrollbar{display:none}
 .hw-strip figure{margin:0;position:relative;scroll-snap-align:start}
