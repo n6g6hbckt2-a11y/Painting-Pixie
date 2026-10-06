@@ -523,3 +523,15 @@ select {
 .ate-badge img { height: auto; border-radius: 6px; box-shadow: 0 6px 16px -8px rgba(0,0,0,.45); }
 footer .ate-badge { display: block; width: fit-content; margin: 4px auto 12px; }
 footer .ate-badge img { display: block; margin: 0 auto; }
+
+/* =========================
+   SEASONAL BANNER (Halloween 2026 - remove after 31 Oct)
+========================= */
+.seasonbar{position:relative;z-index:50;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:11px 16px;text-decoration:none;text-align:center;color:#1A0B24;background:linear-gradient(90deg,#FF7A1A 0%,#FFB020 30%,#FF7A1A 55%,#B83CFF 100%);background-size:200% 100%;font-weight:800;font-size:15.5px;line-height:1.3;box-shadow:0 4px 18px rgba(255,122,26,.45);animation:seasonslide 9s ease-in-out infinite alternate}
+.seasonbar .si{font-size:20px;line-height:1;display:inline-block;animation:seasonbob 2.4s ease-in-out infinite}
+.seasonbar .sc{display:inline-flex;align-items:center;gap:6px;background:#1A0B24;color:#FFD27A;padding:6px 14px;border-radius:999px;font-size:14px}
+.seasonbar:hover .sc{background:#000;color:#fff}
+@keyframes seasonslide{to{background-position:100% 0}}
+@keyframes seasonbob{50%{transform:translateY(-3px) rotate(-8deg)}}
+@media(max-width:600px){.seasonbar{font-size:14px;padding:9px 12px;gap:8px}.seasonbar .sc{padding:5px 11px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.seasonbar,.seasonbar .si{animation:none}}
