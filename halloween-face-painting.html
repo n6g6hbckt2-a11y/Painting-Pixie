@@ -140,6 +140,21 @@
   ]
 }
 </script>
+<style>
+/* Halloween page: dark header + swipeable photo line */
+.page-header.hw{background:radial-gradient(ellipse at 20% 0%,rgba(255,122,26,.45),transparent 60%),radial-gradient(ellipse at 90% 100%,rgba(155,60,255,.45),transparent 60%),#160C22;color:#fff}
+.page-header.hw::before{display:none}
+.page-header.hw h1,.page-header.hw p{color:#fff}
+.hw-strip-wrap{padding:22px 0 10px;background:#160C22;max-width:none;margin:0}
+.hw-strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:10px;overflow-x:auto;padding:0 12px 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.hw-strip::-webkit-scrollbar{display:none}
+.hw-strip figure{margin:0;position:relative;scroll-snap-align:start}
+.hw-strip img{display:block;height:360px;width:100%;object-fit:cover;object-position:center 30%;border-radius:10px}
+.hw-strip figcaption{position:absolute;left:10px;bottom:10px;background:rgba(22,12,34,.8);color:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:700}
+.hw-strip-note{text-align:center;margin:12px 0 6px;font-size:15px;color:#E9DDF5}
+.hw-strip-note a{color:#FFB25A;font-weight:700}
+@media(max-width:700px){.hw-strip{grid-auto-columns:70%}.hw-strip img{height:300px}}
+</style>
 </head>
 <body>
 <nav>
@@ -152,7 +167,7 @@
 <a href="contact.html">Book</a>
 </nav>
 
-<header class="page-header">
+<header class="page-header hw">
 <h1>Halloween Face Painting in Sussex & Surrey 🎃</h1>
 <p>Spooky, silly or seriously scary. Halloween face painting for parties, school discos and events across Sussex and Surrey.</p>
 <div style="margin-top:20px;">
@@ -161,8 +176,13 @@
 </div>
 </header>
 
+<section class="hw-strip-wrap" aria-label="Halloween face painting by Kat">
+<div class="hw-strip"><figure><img src="jack-o-lantern-pumpkin-face-paint-for-girls.jpg" alt="Jack-o-lantern pumpkin face paint on a girl at a Halloween event" loading="eager"><figcaption>Jack-o’-lantern</figcaption></figure><figure><img src="blue-and-green-monster-skull-face-paint-for-boys.jpg" alt="Blue and green monster skull face paint on a boy" loading="eager"><figcaption>Monster skull</figcaption></figure><figure><img src="werewolf-face-paint-for-men.jpg" alt="Werewolf face paint on an adult at a Halloween party" loading="eager"><figcaption>Werewolf</figcaption></figure><figure><img src="pink-princess-crown-face-paint-with-butterfly-wing-cheek-design.jpg" alt="Pink princess crown face paint with a skeleton costume" loading="eager"><figcaption>Pink princess crown</figcaption></figure><figure><img src="red-devil-face-paint-for-girls.jpg" alt="Red devil face paint with horns on a girl" loading="lazy"><figcaption>Red devil</figcaption></figure><figure><img src="pumpkin-face-paint-for-sisters.jpg" alt="Two sisters with matching pumpkin face paint" loading="lazy"><figcaption>Pumpkin sisters</figcaption></figure><figure><img src="blue-skull-face-paint-adult-horsham.jpg" alt="Blue and white skull face paint on an adult" loading="lazy"><figcaption>Grown-up skull</figcaption></figure><figure><img src="red-devil-face-paint-for-boys.jpg" alt="Red devil face paint on a boy" loading="lazy"><figcaption>Little devil</figcaption></figure><figure><img src="blue-dragon-monster-face-paint-for-boys.jpg" alt="Blue dragon monster face paint on a child" loading="lazy"><figcaption>Roaring monster</figcaption></figure></div>
+<p class="hw-strip-note">Swipe for more spooky looks, or <a href="gallery.html">see the full gallery →</a></p>
+</section>
+
 <section class="about">
-<img src="jack-o-lantern-pumpkin-face-paint-for-girls.jpg" alt="Jack-o'-lantern pumpkin face paint design on a smiling girl, Halloween face painting by The Painting Pixie">
+<img src="half-skull-face-paint-boy-halloween.webp" alt="Kat from The Painting Pixie painting a half skull design on a boy for Halloween">
 <div>
 <h2>Make Your Halloween Party Unforgettable 🦇</h2>
 <p>
@@ -199,26 +219,12 @@ date in mind, get in touch early.
 
 <h3 style="text-align:center;">🎃 Cute &amp; Not-Too-Scary</h3>
 <p style="text-align:center;">Perfect for toddlers and younger children: bright pumpkins, friendly monsters and a bit of sparkle.</p>
-<div class="mini-gallery">
-<img src="pumpkin-face-paint-for-sisters.jpg" alt="Two sisters with matching pumpkin face paint designs for Halloween" loading="lazy">
-<img src="blue-monster-face-paint-for-girls.jpg" alt="Friendly blue monster face paint design for a girl, not-too-scary Halloween face painting" loading="lazy">
-</div>
 
 <h3 style="text-align:center; margin-top:40px;">💀 Classic Spooky</h3>
 <p style="text-align:center;">Skulls, devils and dark designs — for kids and grown-ups who want to look the part.</p>
-<div class="mini-gallery">
-<img src="blue-skull-face-paint-adult-horsham.jpg" alt="Blue and white skull face paint design on an adult woman, Halloween face painting by The Painting Pixie" loading="lazy">
-<img src="blue-and-green-monster-skull-face-paint-for-boys.jpg" alt="Blue and green monster skull face paint design for a boy at Halloween" loading="lazy">
-<img src="red-devil-face-paint-for-boys.jpg" alt="Red devil face paint design with horns for a boy, Halloween face painting" loading="lazy">
-<img src="red-devil-face-paint-for-girls.jpg" alt="Red devil face paint design for a girl, Halloween party face painting" loading="lazy">
-</div>
 
 <h3 style="text-align:center; margin-top:40px;">🐺 Monsters &amp; Creatures</h3>
 <p style="text-align:center;">Big, bold transformations for older kids and adults.</p>
-<div class="mini-gallery">
-<img src="blue-dragon-monster-face-paint-for-boys.jpg" alt="Blue dragon monster face paint design for a boy, Halloween creature face painting" loading="lazy">
-<img src="werewolf-face-paint-for-men.jpg" alt="Werewolf face paint design on an adult man, adult Halloween party face painting" loading="lazy">
-</div>
 
 <p style="text-align:center; margin-top:30px;">
 Can't see the design you're after? Witches, bats, spiders, black cats and zombies are all popular
