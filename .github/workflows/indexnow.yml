@@ -1,0 +1,55 @@
+# Tells Bing, Yandex, Seznam and other IndexNow search engines about changed pages every time the site is updated.
+# Run it by hand (Actions > IndexNow > Run workflow) with "all" ticked to submit every page.
+name: IndexNow
+on:
+  push:
+    branches: [main]
+    paths: ['**.html']
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Submit every page, not just the ones changed in the last update
+        type: boolean
+        default: true
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Work out which pages changed
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.all }}" = "true" ]; then
+            ls *.html > pages.txt
+          else
+            git diff --name-only --diff-filter=AM HEAD~1 HEAD -- '*.html' | grep -v / > pages.txt || true
+          fi
+          # skip redirect stubs and pages that ask not to be indexed
+          : > urls.txt
+          while read -r f; do
+            [ -f "$f" ] || continue
+            grep -qi 'http-equiv="refresh"\|name="robots" content="noindex' "$f" && continue
+            if [ "$f" = index.html ]; then echo "https://paintingpixie.com/"; else echo "https://paintingpixie.com/$f"; fi >> urls.txt
+          done < pages.txt
+          cat urls.txt
+      - name: Wait for GitHub Pages to publish the update
+        run: |
+          for i in $(seq 1 30); do
+            curl -sf https://paintingpixie.com/4d40d43a0eefabbb9997f644fc492c62.txt >/dev/null && break
+            sleep 20
+          done
+          sleep 60
+      - name: Submit to IndexNow
+        run: |
+          [ -s urls.txt ] || { echo "No pages to submit"; exit 0; }
+          python3 - <<'PY'
+          import json, urllib.request
+          urls = [u.strip() for u in open('urls.txt') if u.strip()]
+          body = json.dumps({"host": "paintingpixie.com", "key": "4d40d43a0eefabbb9997f644fc492c62",
+                             "keyLocation": "https://paintingpixie.com/4d40d43a0eefabbb9997f644fc492c62.txt", "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          r = urllib.request.urlopen(req, timeout=30)
+          print("IndexNow response:", r.status, "for", len(urls), "pages")
+          PY
