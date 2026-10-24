@@ -27,22 +27,77 @@
 <!-- LocalBusiness schema (helps Google understand who/what/where you are) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "The Painting Pixie",
-  "alternateName": ["Pixie Face Painting", "Pixies Face Painting", "Painting Pixie Face Painting"],
-  "address": {
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://paintingpixie.com/#organization",
+   "name": "The Painting Pixie",
+   "legalName": "The Painting Pixie Limited",
+   "alternateName": [
+    "Pixie Face Painting",
+    "Pixies Face Painting",
+    "Painting Pixie Face Painting"
+   ],
+   "url": "https://paintingpixie.com/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://paintingpixie.com/img/logo-lg.webp",
+    "width": 480,
+    "height": 480
+   },
+   "description": "Professional face painters offering magical, skin-safe face painting for children's parties, weddings and events across Sussex, Surrey and Brighton.",
+   "telephone": "+447852300125",
+   "founder": {
+    "@type": "Person",
+    "name": "Kat",
+    "jobTitle": "Founder and professional face painter"
+   },
+   "sameAs": [
+    "https://www.instagram.com/thepaintingpixieltd/",
+    "https://www.addtoevent.co.uk/suppliers/the-painting-pixie-ltd",
+    "https://www.google.com/maps/place/?q=place_id:ChIJ9RzrvqH2gYcR35xDxwANJEE"
+   ]
+  },
+  {
+   "@type": "LocalBusiness",
+   "@id": "https://paintingpixie.com/#business",
+   "name": "The Painting Pixie",
+   "alternateName": [
+    "Pixie Face Painting",
+    "Pixies Face Painting",
+    "Painting Pixie Face Painting"
+   ],
+   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Horsham",
     "addressRegion": "West Sussex",
     "addressCountry": "GB"
+   },
+   "image": "https://paintingpixie.com/hero.jpg",
+   "description": "Professional face painters offering magical, skin-safe face painting for children's parties, weddings and events across Sussex, Surrey and Brighton.",
+   "areaServed": [
+    "Sussex",
+    "Surrey",
+    "Brighton"
+   ],
+   "url": "https://paintingpixie.com/",
+   "telephone": "+447852300125",
+   "priceRange": "££",
+   "parentOrganization": {
+    "@id": "https://paintingpixie.com/#organization"
+   }
   },
-  "image": "https://paintingpixie.com/hero.jpg",
-  "description": "Professional face painters offering magical, skin-safe face painting for children's parties, weddings and events across Sussex, Surrey and Brighton.",
-  "areaServed": ["Sussex", "Surrey", "Brighton"],
-  "url": "https://paintingpixie.com/",
-  "telephone": "+447852300125",
-  "priceRange": "££"
+  {
+   "@type": "WebSite",
+   "@id": "https://paintingpixie.com/#website",
+   "url": "https://paintingpixie.com/",
+   "name": "The Painting Pixie",
+   "publisher": {
+    "@id": "https://paintingpixie.com/#organization"
+   }
+  }
+ ]
 }
 </script>
 <script>
